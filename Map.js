@@ -1,48 +1,29 @@
-// var map=new Map()
-// map.set("first name", "sumit");
-// map.set("last name", "ghosh");
-// map.set("website", "geeksforgeeks")
-//     .set("friend 1","gourav")
-//     .set("friend 2","sourav")
-// console.log(map)
-// console.log(map.has("first name"));
-// console.log(map.has("First"))
-// console.log(map.get("first name"));
-// console.log(map.delete("first name"));
-// //map.clear()
-// for(var ele of map.entries())
-// console.log(ele);
-// for(var ele of map.keys()){
-//     console.log(ele)
-// }
-// for(var ele of map.values())
-// console.log(ele)
-// console.log(map)
-// console.log("-----key values pair--------")
-// function print_values(values,key,map){
-//     console.log(key,"---",values)
-// }
-// map.forEach(print_values)
-// console.log(" Map.prototype[@@iterator]()")
-// var getit=map[Symbol.iterator]()
-// for(var ele of getit)
-// console.log(ele)
-
-class Map{
-    add(){
-        var obj={}
-        obj.name="aman";
-        obj.age=10
-        return obj
+class MapImplement{
+    constructor(){
+        this.map={}
     }
-    clear(obj){
-        return arr.splice(0,obj.length)
+   set(key,val){
+       //console.log(key)
+       this.map[key]=val
+       return this
+   }
+   size(){
+       var keys=Object.keys(this.map)
+       return keys.length
+   }
+   delete(key){
+       return delete this.map[key]
+   }
+   has(key){
+    if(this.map.hasOwnProperty(key)){
+        return true
     }
-    has(){
-        obj.hasOwnProperty()
-    }
+    return false
+   }
 }
-let obj=new Map();
+let obj=new MapImplement();
 console.log("Set elements")
-console.log(obj.add())
-console.log(obj.clear())
+console.log(obj.set("aman",21).set("Arun",23).set("arjun",20))
+console.log(obj.size())
+console.log(obj.delete("aman"))
+console.log(obj.has("aman"))

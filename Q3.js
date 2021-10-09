@@ -3,6 +3,9 @@
             this.name=name;
             this.age=age;
         }
+        getdata(){
+            console.log(this.name+" "+this.age)
+        }
     }
     class employee extends person{ 
         constructor(name,age){
@@ -13,9 +16,7 @@
         constructor(name,age){
             super(name,age)
         }
-        static getdata(){
-            console.log(this.name+" "+this.age)
-        }
+        
     }
     const obj=new developers("aman",23)
-    developers.getdata(obj)
+    obj.getdata()

@@ -1,40 +1,42 @@
-var arr=[]
-class Set_implement{
-    add(ele){
-        return arr.push(ele)
+class SetImplement {
+  constructor() {
+    this.arr = [];
+  }
+  add(ele) {
+    this.arr.push(ele);
+    return this;
+  }
+  has(ele) {
+    for (let i = 0; i < this.arr.length; i++) {
+      if (this.arr[i] == ele) {
+        return true;
+      }
     }
-    has(ele){
-        for(let i=0;i<arr.length;i++){
-            if(arr[i]==ele)
-            {
-                return true;
-            }
-        }
-        return false
+    return false;
+  }
+  clear() {
+   this.arr.splice(0, this.arr.length);
+    return this.arr;
+  }
+  get size() {
+    //var arr_size=arr.length;
+    return this.arr.length;
+  }
+  delete(val) {
+    // console.log(val)
+    var delete_ele = 0;
+    for (let i = 0; i < this.arr.length; i++) {
+      if (this.arr[i] == val) {
+        delete_ele = this.arr.splice(i, 1);
+      }
     }
-    clear(){
-        arr.splice(0,arr.length)
-        return arr
-    }
-    size(){
-        var arr_size=arr.length;
-        return arr_size
-    }
-    delete(val){
-       // console.log(val)
-       var delete_ele=0;
-        for(let i=0;i<arr.length;i++){
-            if(arr[i]==val){
-                delete_ele= arr.splice(i,1)
-            }
-        }
-        console.log(arr)
-    }
+    console.log(this.arr);
+  }
 }
-let obj=new Set_implement()
-console.log(obj.add(1))
-console.log(obj.add(2))
+let obj = new SetImplement();
+console.log(obj.add(1).add(2));
+console.log(obj.add(2));
 console.log(obj.has(2))
- //console.log(obj.clear())
-console.log(obj.size())
+// console.log(obj.clear())
+console.log(obj.size);
 obj.delete(2)
